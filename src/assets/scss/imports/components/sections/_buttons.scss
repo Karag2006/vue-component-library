@@ -1,0 +1,20 @@
+.buttons {
+    --_skew-angle: -5deg;
+    --_background: linear-gradient(
+        45deg,
+        hsl(232.02, 100%, 66.08%),
+        hsl(236.92, 100%, 22.94%),
+        hsl(234.45, 100%, 44.51%)
+    );
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background: var(--_background);
+        transform: skewY(var(--_skew-angle));
+    }
+}
