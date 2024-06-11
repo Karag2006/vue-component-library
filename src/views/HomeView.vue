@@ -4,6 +4,7 @@ import ComponentGrid from '@/components/wrapper/ComponentGrid.vue'
 import DisplayCard from '@/components/wrapper/DisplayCard.vue'
 import CustomButton from '@/components/CustomButton.vue'
 import ScrollContainer from '@/components/ScrollContainer.vue'
+import ImageCarousel from '@/components/ImageCarousel/index.vue'
 </script>
 
 <template>
@@ -30,6 +31,15 @@ import ScrollContainer from '@/components/ScrollContainer.vue'
                 <DisplayCard>
                     <template #header> Scroll Container </template>
                     <ScrollContainer />
+                    <template #footer>
+                        requires height or max-height to be set on the parent.
+                        Scroll is limited to the container and can't "spill"
+                        into surrounding elements
+                    </template>
+                </DisplayCard>
+                <DisplayCard>
+                    <template #header> Scroll Container </template>
+                    <ImageCarousel />
                     <template #footer>
                         requires height or max-height to be set on the parent.
                         Scroll is limited to the container and can't "spill"
