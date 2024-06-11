@@ -1,7 +1,7 @@
 <script setup>
 import SectionWrapper from '@/components/wrapper/SectionWrapper.vue'
 import ComponentGrid from '@/components/wrapper/ComponentGrid.vue'
-import ComponentView from '@/components/wrapper/ComponentView.vue'
+import DisplayCard from '@/components/wrapper/DisplayCard.vue'
 import CustomButton from '@/components/CustomButton.vue'
 import ScrollContainer from '@/components/ScrollContainer.vue'
 </script>
@@ -11,30 +11,31 @@ import ScrollContainer from '@/components/ScrollContainer.vue'
         <SectionWrapper class="buttons">
             <template #SectionName>Buttons</template>
             <ComponentGrid>
-                <ComponentView>
+                <DisplayCard>
+                    <template #header> Custom Button </template>
                     <CustomButton variant="outline" size="md">
                         Button
                     </CustomButton>
-                </ComponentView>
-                <ComponentView> </ComponentView>
-                <ComponentView>
-                    <CustomButton variant="outline" size="md">
-                        Button
-                    </CustomButton>
-                </ComponentView>
-                <ComponentView>
-                    <CustomButton variant="outline" size="md">
-                        Button
-                    </CustomButton>
-                </ComponentView>
+                    <template #footer>
+                        Inspired by shadcn-ui. uses 'variant' and 'size' custom
+                        properties to choose between predefined button
+                        layouts.</template
+                    >
+                </DisplayCard>
             </ComponentGrid>
         </SectionWrapper>
         <SectionWrapper class="display-elements">
             <template #SectionName>Display Elements</template>
             <ComponentGrid>
-                <ComponentView>
+                <DisplayCard>
+                    <template #header> Scroll Container </template>
                     <ScrollContainer />
-                </ComponentView>
+                    <template #footer>
+                        requires height or max-height to be set on the parent.
+                        Scroll is limited to the container and can't "spill"
+                        into surrounding elements
+                    </template>
+                </DisplayCard>
             </ComponentGrid>
         </SectionWrapper>
     </main>
